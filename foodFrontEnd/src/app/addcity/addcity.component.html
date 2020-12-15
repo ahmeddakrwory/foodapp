@@ -1,0 +1,16 @@
+<form [formGroup]="citform" (ngSubmit)="addcity()">
+    <div>
+        <h1> add arabic name</h1>
+        <input formControlName='nameAr' type="text" >        
+    </div>
+<div>
+    <h1> add english name</h1>
+</div>> 
+<div>              
+<input formControlName='nameEn' type="text" >
+</div>
+<button  mat-button color="primar">  add</button>
+
+
+</form>
+<span> <button  mat-button color="primar" routerLink="/">  finsh</button></span>

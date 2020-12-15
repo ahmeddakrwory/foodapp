@@ -1,0 +1,46 @@
+
+<div class="form-group row"></div>
+<div class="form-group row">
+
+  <label for="search" class="col-sm-2 col -form -lable" style="text-align: right;"> search</label>
+</div>
+<div class="col sm-6">
+  <input type="text" [(ngModel)]="searchvalue" class="form-control" id="search"> 
+</div>
+<div>
+
+</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">nameAr</th>
+      <th scope="col">nameEn</th>
+      <th scope="col"> delete</th>
+      <th scope="col"> add city</th>
+      <th scope="col"> Edit </th>
+    </tr>
+    </thead>
+    <tbody *ngIf="city|async as cutyres ">
+   
+    <tr *ngFor="let country of (cutyres|cityfilter:searchvalue) index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>
+       <a  [routerLink]="[ '/city', country.id ]"> {{ country.nameAr  }} </a>
+        <label hidden ='true'> {{country.id}}</label>
+      </td>
+      <td> <a   [routerLink]="[ '/city', country.id ]">{{ country.nameEn }}</a> </td> 
+     
+     <td> <button mat-button color="warn" (click)="deletecity(country.id)" routerLink='/city'>delete </button></td>
+   <td> <a routerLink='/addcity'> Add </a> </td>
+       <td>
+         <a  [routerLink]="[ '/updatecit', country.id ]">Edit</a>
+       </td>
+    </tr>
+ 
+    </tbody>
+  </table>
+  <div>
+      
+  </div>
+  <router-outlet></router-outlet>

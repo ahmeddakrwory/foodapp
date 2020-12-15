@@ -1,0 +1,20 @@
+
+<div>
+    <span class="label label-default">choose city</span>
+    <select class="form-control"  [(ngModel)]="cid"  > 
+        <option *ngFor="let city of (cities|async)" [value]="city.id"> {{city.nameAr}} </option>
+        
+        </select>
+</div>
+
+<form [formGroup]="areaform" (ngSubmit)="Addera()">
+    <span class="label label-default">set arabic name</span>
+    <input class="form-control" formControlName="nameAr" type="text" placeholder="Arabic name ">
+<br>
+<span class="label label-default">SEt english name</span>
+<input class="form-control" formControlName="nameEn" type="text" placeholder="English name">
+<br>
+<button class="btn btn-primary"> Add </button>
+
+</form>
+

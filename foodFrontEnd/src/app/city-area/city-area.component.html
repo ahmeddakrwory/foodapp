@@ -1,0 +1,37 @@
+<p>city-area works!</p>
+
+  
+<div>
+  
+</div>     
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">nameAr</th>
+      <th scope="col">nameEn</th>
+      <th scope="col"> delete</th>
+      <th scope="col"> add Area</th>
+      <th scope="col"> Edit </th>
+    </tr>
+    </thead>
+    <tbody >
+   
+    <tr *ngFor="let country of (cityies.areas) index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>
+       <a  [routerLink]="[ '/city', country.id ]"> {{ country.nameAr  }} </a>
+        <label hidden ='true'> {{country.id}}</label>
+      </td>
+      <td> <a   [routerLink]="[ '/city', country.id ]">{{ country.nameEn }}</a> </td> 
+     
+     <td> <button mat-button color="warn">delete </button></td>
+   <td>   <a [routerLink]="[ '/addar', cityies.id ]">add</a> </td>
+       <td>
+         <a  >Edit</a>
+       </td>
+    </tr>
+ 
+    </tbody>
+  </table>
+    
